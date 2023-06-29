@@ -1,12 +1,24 @@
 import { useState } from 'react'
 
 const App = () => {
-  const[count,setCount] = useState(0)
+  const [firstName,setFirstName] = useState(null)
+  const [email, setEmail] = useState(null)
 
-  console.log(count)
+  console.log(firstName,email)
+
   return (
     <div>
-      <button onClick={() => setCount(count +1)}>ADD 1</button>
+      <form>
+        <input
+          placeholder="First Name"
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+        <input
+          type="email"
+          placeholder="email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </form>
     </div>
   );
 }
